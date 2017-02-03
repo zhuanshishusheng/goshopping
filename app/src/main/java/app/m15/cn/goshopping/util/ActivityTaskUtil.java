@@ -9,7 +9,7 @@ import java.util.Stack;
  */
 
 public class ActivityTaskUtil {
-    public static ActivityTaskUtil sInstance;
+    private static ActivityTaskUtil sInstance;
     private Stack<Activity> mActivityStack;
 
     static {
