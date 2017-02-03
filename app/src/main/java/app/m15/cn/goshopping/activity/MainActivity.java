@@ -2,23 +2,15 @@ package app.m15.cn.goshopping.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-
-import app.m15.cn.goshopping.R;
-import app.m15.cn.goshopping.base.BaseActivity;
+import android.support.v7.app.AppCompatActivity;
 
 /**
  * Created by liueg on 2017/2/3.
  */
 
-public class WelcomeActivity extends BaseActivity {
+public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
     }
 }
