@@ -38,5 +38,6 @@ public class WelcomeActivity extends BaseActivity {
 
     private void startMainActivity() {
         new Handler().postDelayed(new SkipRunnable(this),3000);
+        finish();
     }
 }
