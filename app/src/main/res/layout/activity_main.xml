@@ -17,14 +17,20 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal">
-        <RadioButton style="@style/MainRadioButton"
-                     android:button="@null"
-                     android:text="@string/home"/>
-        <RadioButton style="@style/MainRadioButton"
-                     android:button="@null"
-                     android:text="@string/sort"/>
-        <RadioButton style="@style/MainRadioButton"
-                     android:button="@null"
-                     android:text="@string/me"/>
+        <RadioButton
+            android:id="@+id/main_rb_home"
+            style="@style/MainRadioButton"
+            android:button="@null"
+            android:text="@string/home"/>
+        <RadioButton
+            android:id="@+id/main_rb_sort"
+            style="@style/MainRadioButton"
+            android:button="@null"
+            android:text="@string/sort"/>
+        <RadioButton
+            android:id="@+id/main_rb_me"
+            style="@style/MainRadioButton"
+            android:button="@null"
+            android:text="@string/me"/>
     </RadioGroup>
 </LinearLayout>

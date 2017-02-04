@@ -13,12 +13,21 @@ import app.m15.cn.goshopping.R;
  * Created by liueg on 2017/2/4.
  */
 
-public class SortFragment extends Fragment{
+public class SortFragment extends Fragment {
+    private static SortFragment sInstance;
     private View mView;
+
+    public static SortFragment getInstance() {
+        if (sInstance == null) {
+            sInstance = new SortFragment();
+        }
+        return sInstance;
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView=inflater.inflate(R.layout.fragment_sort,null);
+        mView = inflater.inflate(R.layout.fragment_sort, null);
         return mView;
     }
 }

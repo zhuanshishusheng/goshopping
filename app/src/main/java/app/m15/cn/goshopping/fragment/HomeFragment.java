@@ -14,11 +14,20 @@ import app.m15.cn.goshopping.R;
  */
 
 public class HomeFragment extends Fragment {
+    private static HomeFragment sInstance;
     private View mView;
+
+    public static HomeFragment getInstance() {
+        if (sInstance == null) {
+            sInstance = new HomeFragment();
+        }
+        return sInstance;
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView=inflater.inflate(R.layout.fragment_home,null);
+        mView = inflater.inflate(R.layout.fragment_home, null);
         return mView;
     }
 }
