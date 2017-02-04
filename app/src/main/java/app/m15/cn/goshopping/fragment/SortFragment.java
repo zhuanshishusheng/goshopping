@@ -10,15 +10,15 @@ import android.view.ViewGroup;
 import app.m15.cn.goshopping.R;
 
 /**
- * Created by liueg on 2017/2/3.
+ * Created by liueg on 2017/2/4.
  */
 
-public class MeFragment extends Fragment{
+public class SortFragment extends Fragment{
     private View mView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView=inflater.inflate(R.layout.fragment_me,null);
+        mView=inflater.inflate(R.layout.fragment_sort,null);
         return mView;
     }
 }

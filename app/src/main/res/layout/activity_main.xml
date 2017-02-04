@@ -5,24 +5,26 @@
               android:orientation="vertical">
 
     <FrameLayout
-        android:id="@+id/main_frame"
+        android:id="@+id/main_frame_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9">
 
     </FrameLayout>
-    <RadioGroup android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-    android:orientation="horizontal">
+    <RadioGroup
+        android:id="@+id/main_rg_control"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
         <RadioButton style="@style/MainRadioButton"
-        android:button="@null"
-        android:text="@string/home"/>
+                     android:button="@null"
+                     android:text="@string/home"/>
         <RadioButton style="@style/MainRadioButton"
-        android:button="@null"
-        android:text="@string/sort"/>
+                     android:button="@null"
+                     android:text="@string/sort"/>
         <RadioButton style="@style/MainRadioButton"
-        android:button="@null"
-        android:text="@string/me"/>
+                     android:button="@null"
+                     android:text="@string/me"/>
     </RadioGroup>
 </LinearLayout>

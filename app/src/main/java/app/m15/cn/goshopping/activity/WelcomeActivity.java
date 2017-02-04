@@ -15,13 +15,14 @@ import app.m15.cn.goshopping.util.CommonUtil;
 
 public class WelcomeActivity extends BaseActivity {
     class SkipRunnable implements Runnable{
-        private Context mContext;
-        public SkipRunnable(Context context){
-            mContext=context;
+        private WelcomeActivity mWelcomeActivity;
+        public SkipRunnable(WelcomeActivity welcomeActivity){
+            this.mWelcomeActivity=welcomeActivity;
         }
         @Override
         public void run() {
-            CommonUtil.startActivity(this.mContext,MainActivity.class);
+            CommonUtil.startActivity(this.mWelcomeActivity,MainActivity.class);
+            this.mWelcomeActivity.finish();
         }
     }
     @Override
@@ -38,6 +39,5 @@ public class WelcomeActivity extends BaseActivity {
 
     private void startMainActivity() {
         new Handler().postDelayed(new SkipRunnable(this),3000);
-        finish();
     }
 }
