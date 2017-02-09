@@ -1,9 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:background="@color/mainBackGround"
+              android:orientation="vertical">
+    <!--Top部分-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/orange">
+        <ImageButton
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/me_person_set"/>
+        <ImageButton
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:src="@mipmap/me_change_info"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="OPPO账号:157******81"
+            android:textColor="@color/white"
+            android:textSize="14dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="粉丝: 0"
+                android:textColor="@color/white"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="关注: 0 "
+                android:textColor="@color/white"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="被喜欢: 0 "
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </RelativeLayout>
 
-    <TextView android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-    android:text="@string/me"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/me_shopping_car"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="购物车"/>
+        <View android:layout_width="1dp"
+              android:layout_height="40dp"
+              android:layout_marginTop="10dp"
+              android:background="@color/mainBackGround"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/me_order_img"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="订单"/>
+        <View android:layout_width="1dp"
+              android:layout_height="40dp"
+              android:layout_marginTop="10dp"
+              android:background="@color/mainBackGround"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/me_message_img"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="消息"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+         android:orientation="horizontal">
+
+    </LinearLayout>
 </LinearLayout>
