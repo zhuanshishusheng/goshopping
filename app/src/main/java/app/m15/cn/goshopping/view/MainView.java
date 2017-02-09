@@ -8,5 +8,4 @@ import android.app.Fragment;
 
 public interface MainView {
     void replaceFragment(int i,Fragment fragment);
-    void showDefaultFragment();
 }

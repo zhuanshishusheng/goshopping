@@ -35,6 +35,8 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         mMainRgControl = (RadioGroup)findViewById(R.id.main_rg_control);
         mMainRgControl.setOnCheckedChangeListener(this);
         mFragmentManager = getFragmentManager();
+
+        replaceFragment(R.id.main_frame_content,HomeFragment.getInstance());
     }
 
     @Override
@@ -59,8 +61,4 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
                 .commit();
     }
 
-    @Override
-    public void showDefaultFragment() {
-        
-    }
 }
