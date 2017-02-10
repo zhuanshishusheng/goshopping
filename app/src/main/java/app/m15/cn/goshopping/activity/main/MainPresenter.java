@@ -1,17 +1,15 @@
-package app.m15.cn.goshopping.presenter;
+package app.m15.cn.goshopping.activity.main;
 
 import android.app.Fragment;
-
-import app.m15.cn.goshopping.view.MainView;
 
 /**
  * Created by liueg on 2017/2/4.
  */
 
-public class MainPresenter implements MainPresenterIble {
-    private MainView mMainView;
+public class MainPresenter implements MainContact.Presenter {
+    private MainContact.View mMainView;
 
-    public MainPresenter(MainView mainView){
+    public MainPresenter(MainContact.View mainView){
         this.mMainView=mainView;
     }
     @Override

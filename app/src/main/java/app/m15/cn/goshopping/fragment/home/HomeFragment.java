@@ -1,4 +1,4 @@
-package app.m15.cn.goshopping.fragment;
+package app.m15.cn.goshopping.fragment.home;
 
 import android.app.Fragment;
 import android.os.Bundle;

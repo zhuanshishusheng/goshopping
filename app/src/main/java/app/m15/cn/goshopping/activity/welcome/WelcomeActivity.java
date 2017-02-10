@@ -1,11 +1,11 @@
-package app.m15.cn.goshopping.activity;
+package app.m15.cn.goshopping.activity.welcome;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 
 import app.m15.cn.goshopping.R;
+import app.m15.cn.goshopping.activity.main.MainActivity;
 import app.m15.cn.goshopping.base.BaseActivity;
 import app.m15.cn.goshopping.util.CommonUtil;
 

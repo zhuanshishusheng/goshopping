@@ -1,4 +1,4 @@
-package app.m15.cn.goshopping.activity;
+package app.m15.cn.goshopping.activity.main;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -8,17 +8,15 @@ import android.widget.RadioGroup;
 
 import app.m15.cn.goshopping.R;
 import app.m15.cn.goshopping.base.BaseActivity;
-import app.m15.cn.goshopping.fragment.HomeFragment;
-import app.m15.cn.goshopping.fragment.MeFragment;
-import app.m15.cn.goshopping.fragment.SortFragment;
-import app.m15.cn.goshopping.presenter.MainPresenter;
-import app.m15.cn.goshopping.view.MainView;
+import app.m15.cn.goshopping.fragment.home.HomeFragment;
+import app.m15.cn.goshopping.fragment.me.MeFragment;
+import app.m15.cn.goshopping.fragment.sort.SortFragment;
 
 /**
  * Created by liueg on 2017/2/3.
  */
 
-public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener,MainView {
+public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener,MainContact.View {
     private MainPresenter mMainPresenter;
     private RadioGroup mMainRgControl;
     private FragmentManager mFragmentManager;

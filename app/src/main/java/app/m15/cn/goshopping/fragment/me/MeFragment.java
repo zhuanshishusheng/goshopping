@@ -1,4 +1,4 @@
-package app.m15.cn.goshopping.fragment;
+package app.m15.cn.goshopping.fragment.me;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -27,7 +27,7 @@ public class MeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_me, null);
+        mView=inflater.inflate(R.layout.fragment_me,null);
         return mView;
     }
 }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MeSelectView">
+        <attr name="icon" format="reference"></attr>
+        <attr name="viewText" format="string"></attr>
+        <attr name="viewTextSize" format="dimension"></attr>
+    </declare-styleable>
+</resources>
