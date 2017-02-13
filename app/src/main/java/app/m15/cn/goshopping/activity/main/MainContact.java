@@ -8,9 +8,17 @@ import android.app.Fragment;
 
 public class MainContact {
     interface View{
+        void initView();
+        void initData();
+        void initListener();
         void replaceFragment(int i,Fragment fragment);
     }
     interface Presenter{
-        void replaceFragment(int i,Fragment fragment);
+        void init();
+        void destroyView();
+    }
+    //获取网络数据的接口
+    interface Support{
+
     }
 }

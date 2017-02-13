@@ -26,15 +26,13 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mMainPresenter=new MainPresenter(this);
-        init();
+        mMainPresenter.init();
     }
 
-    private void init() {
-        mMainRgControl = (RadioGroup)findViewById(R.id.main_rg_control);
-        mMainRgControl.setOnCheckedChangeListener(this);
-        mFragmentManager = getFragmentManager();
-
-        replaceFragment(R.id.main_frame_content,HomeFragment.getInstance());
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mMainPresenter.destroyView();
     }
 
     @Override
@@ -50,6 +48,22 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
                  replaceFragment(R.id.main_frame_content, MeFragment.getInstance());
                  break;
          }
+    }
+
+    @Override
+    public void initView() {
+        mMainRgControl = (RadioGroup)findViewById(R.id.main_rg_control);
+    }
+
+    @Override
+    public void initData() {
+        mFragmentManager = getFragmentManager();
+        replaceFragment(R.id.main_frame_content,HomeFragment.getInstance());
+    }
+
+    @Override
+    public void initListener() {
+        mMainRgControl.setOnCheckedChangeListener(this);
     }
 
     @Override

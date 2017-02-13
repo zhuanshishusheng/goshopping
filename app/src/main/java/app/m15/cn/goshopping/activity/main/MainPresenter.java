@@ -9,11 +9,21 @@ import android.app.Fragment;
 public class MainPresenter implements MainContact.Presenter {
     private MainContact.View mMainView;
 
-    public MainPresenter(MainContact.View mainView){
-        this.mMainView=mainView;
+    public MainPresenter(MainContact.View mainView) {
+        this.mMainView = mainView;
     }
+
     @Override
-    public void replaceFragment(int i, Fragment fragment) {
-        mMainView.replaceFragment(i,fragment);
+    public void init() {
+        mMainView.initView();
+        mMainView.initData();
+        mMainView.initListener();
+    }
+
+    @Override
+    public void destroyView() {
+        if (mMainView != null) {
+            mMainView = null;
+        }
     }
 }
