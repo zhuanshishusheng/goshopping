@@ -46,6 +46,8 @@ public class MeSelectView extends View {
         mImg = BitmapFactory.decodeResource(getResources(), mImgId);
         mTextPaint = new Paint();
         mTextPaint.setTextSize(mTextSize);
+        //抗锯齿设置
+        mTextPaint.setAntiAlias(true);
     }
 
     @Override
