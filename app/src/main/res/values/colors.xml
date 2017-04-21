@@ -6,5 +6,7 @@
 
     <color name="mainBackGround">#C0C0C0</color>
     <color name="orange">#FF8C00</color>
-    <color name="white">#F8F8FF</color>
+    <!--<color name="orange">#FC9909</color>-->
+    <color name="white">#FFFFFF</color>
+    <color name="meGray">#F5F5F5</color>
 </resources>

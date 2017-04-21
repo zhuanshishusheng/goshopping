@@ -43,9 +43,8 @@ public class HomeFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         List<Integer> images=new ArrayList<>();
-        images.add(R.mipmap.ic_launcher);
-        images.add(R.mipmap.ic_launcher);
-        images.add(R.mipmap.ic_launcher);
+        images.add(R.mipmap.home_banner1);
+        images.add(R.mipmap.home_banner2);
 
         mBanner = (Banner)mView.findViewById(R.id.home_banner_view);
         //设置图片加载器
