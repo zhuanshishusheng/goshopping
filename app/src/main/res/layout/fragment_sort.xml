@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/meGray">
     <!--标题-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,76 +35,88 @@
         android:orientation="horizontal">
         <!--左边选择栏-->
         <ScrollView
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:scrollbars="none">
             <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
                 <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="推荐" />
+                    style="@style/SortRadioButton"
+                    android:button="@null"
+                    android:text="推荐"
+                    android:checked="true"
+                    android:background="@drawable/sort_radiobutton_bg"/>
                 <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="裙子" />
+                    style="@style/SortRadioButton"
+                    android:button="@null"
+                    android:text="裙子"
+                    android:background="@drawable/sort_radiobutton_bg"/>
                 <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="裤子" />
+                    style="@style/SortRadioButton"
+                    android:button="@null"
+                    android:text="裤子"
+                    android:background="@drawable/sort_radiobutton_bg"/>
                 <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="鞋子" />
+                    style="@style/SortRadioButton"
+                    android:button="@null"
+                    android:text="鞋子"
+                    android:background="@drawable/sort_radiobutton_bg"/>
                 <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="男装" />
+                    style="@style/SortRadioButton"
+                    android:button="@null"
+                    android:text="男装"
+                    android:background="@drawable/sort_radiobutton_bg"/>
                 <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="女包" />
+                    style="@style/SortRadioButton"
+                    android:button="@null"
+                    android:text="女包"
+                    android:background="@drawable/sort_radiobutton_bg"/>
                 <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="配饰" />
+                    style="@style/SortRadioButton"
+                    android:button="@null"
+                    android:text="配饰"
+                    android:background="@drawable/sort_radiobutton_bg"/>
                 <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="零食" />
+                    style="@style/SortRadioButton"
+                    android:button="@null"
+                    android:text="零食"
+                    android:background="@drawable/sort_radiobutton_bg"/>
                 <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="内衣" />
+                    style="@style/SortRadioButton"
+                    android:button="@null"
+                    android:text="内衣"
+                    android:background="@drawable/sort_radiobutton_bg"/>
                 <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="美妆护肤" />
+                    style="@style/SortRadioButton"
+                    android:button="@null"
+                    android:text="美妆护肤"
+                    android:background="@drawable/sort_radiobutton_bg"/>
                 <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    style="@style/SortRadioButton"
+                    android:background="@drawable/sort_radiobutton_bg"
+                    android:button="@null"
+                    android:layout_marginBottom="30dp"
                     android:text="日用百货" />
             </RadioGroup>
         </ScrollView>
+        <View
+            android:layout_width="0.1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"/>
         <!--右边显示栏-->
         <GridView
             android:id="@+id/sort_gridview"
             android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="match_parent">
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:numColumns="3"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:verticalSpacing="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
 
         </GridView>
     </LinearLayout>

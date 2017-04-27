@@ -2,15 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@mipmap/ic_launcher"/>
+        android:id="@+id/item_sort_gridview_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <TextView
-        android:layout_width="80dp"
+        android:id="@+id/item_sort_gridview_textview"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="牛仔裤"
+        android:textSize="12dp"
         android:textColor="@android:color/black"/>
 </LinearLayout>

@@ -15,4 +15,17 @@
         <item name="android:gravity">center</item>
         <item name="android:paddingBottom">5dp</item>
     </style>
+
+    <style name="SortRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/sort_radiobutton_textcolor</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+    </style>
 </resources>

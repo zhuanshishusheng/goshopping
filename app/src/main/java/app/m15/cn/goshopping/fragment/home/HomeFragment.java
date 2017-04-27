@@ -19,10 +19,12 @@ import app.m15.cn.goshopping.util.GlideImageLoader;
  * Created by liueg on 2017/2/4.
  */
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements HomeContact.View{
     private static HomeFragment sInstance;
     private View mView;
     private Banner mBanner;
+    private HomePresenter mPresenter;
+    private List<Integer> images;
 
     public static HomeFragment getInstance() {
         if (sInstance == null) {
@@ -30,7 +32,6 @@ public class HomeFragment extends Fragment {
         }
         return sInstance;
     }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -41,12 +42,35 @@ public class HomeFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        mPresenter = new HomePresenter(this);
+        mPresenter.init();
+    }
 
-        List<Integer> images=new ArrayList<>();
+    @Override
+    public void onResume() {
+        super.onResume();
+        initBanner();
+    }
+
+    @Override
+    public void initView() {
+        mBanner = (Banner)mView.findViewById(R.id.home_banner_view);
+    }
+
+    @Override
+    public void initData() {
+        images = new ArrayList<>();
         images.add(R.mipmap.home_banner1);
         images.add(R.mipmap.home_banner2);
+    }
 
-        mBanner = (Banner)mView.findViewById(R.id.home_banner_view);
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initBanner() {
         //设置图片加载器
         mBanner.setImageLoader(new GlideImageLoader());
         //设置图片集合
