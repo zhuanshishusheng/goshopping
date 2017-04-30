@@ -9,4 +9,5 @@
     <!--<color name="orange">#FC9909</color>-->
     <color name="white">#FFFFFF</color>
     <color name="meGray">#F5F5F5</color>
+    <color name="scanResultBlack">#272727</color>
 </resources>

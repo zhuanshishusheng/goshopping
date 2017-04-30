@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.youth.banner.Banner;
 
@@ -13,18 +14,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.m15.cn.goshopping.R;
+import app.m15.cn.goshopping.activity.scan.ScanActivity;
+import app.m15.cn.goshopping.util.CommonUtil;
 import app.m15.cn.goshopping.util.GlideImageLoader;
 
 /**
  * Created by liueg on 2017/2/4.
  */
 
-public class HomeFragment extends Fragment implements HomeContact.View{
+public class HomeFragment extends Fragment implements HomeContact.View, View.OnClickListener {
+
     private static HomeFragment sInstance;
     private View mView;
     private Banner mBanner;
     private HomePresenter mPresenter;
     private List<Integer> images;
+    private TextView mScanView;
 
     public static HomeFragment getInstance() {
         if (sInstance == null) {
@@ -55,6 +60,7 @@ public class HomeFragment extends Fragment implements HomeContact.View{
     @Override
     public void initView() {
         mBanner = (Banner)mView.findViewById(R.id.home_banner_view);
+        mScanView = (TextView)mView.findViewById(R.id.home_scan_view);
     }
 
     @Override
@@ -66,7 +72,7 @@ public class HomeFragment extends Fragment implements HomeContact.View{
 
     @Override
     public void initListener() {
-
+        mScanView.setOnClickListener(this);
     }
 
     @Override
@@ -77,5 +83,14 @@ public class HomeFragment extends Fragment implements HomeContact.View{
         mBanner.setImages(images);
         //开始
         mBanner.start();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.home_scan_view:
+                CommonUtil.startActivity(getActivity(),ScanActivity.class);
+                break;
+        }
     }
 }

@@ -8,7 +8,9 @@ import android.content.Intent;
  */
 
 public class CommonUtil {
+
     public static void startActivity(Context context,Class cla){
         context.startActivity(new Intent(context,cla));
     }
+
 }
