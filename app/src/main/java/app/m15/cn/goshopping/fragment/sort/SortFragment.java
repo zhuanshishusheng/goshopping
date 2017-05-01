@@ -13,12 +13,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import app.m15.cn.goshopping.R;
+import app.m15.cn.goshopping.activity.scan.ScanActivity;
+import app.m15.cn.goshopping.util.CommonUtil;
 
 /**
  * Created by liueg on 2017/2/4.
  */
 
-public class SortFragment extends Fragment {
+public class SortFragment extends Fragment implements SortContact.View, View.OnClickListener {
     private static SortFragment sInstance;
     private String[] jacketNames={"蕾丝衫","牛仔衬衫","衬衫","雪纺衫","短袖t","背心","防晒衫",
             "透视衫","针织衫","长袖t","宽松上衣","开衫","小西装"};
@@ -31,6 +33,8 @@ public class SortFragment extends Fragment {
     ,R.mipmap.sort_jacket_xiaoxizhuang_img};
     private View mView;
     private GridView mGridView;
+    private SortPresenter mPresenter;
+    private TextView mSortScanTv;
 
     public static SortFragment getInstance() {
         if (sInstance == null) {
@@ -49,12 +53,40 @@ public class SortFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        init();
+        mPresenter = new SortPresenter(this);
+        mPresenter.init();
     }
 
-    private void init() {
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mPresenter.destroyView();
+    }
+
+
+    @Override
+    public void initView() {
         mGridView = (GridView) mView.findViewById(R.id.sort_gridview);
+        mSortScanTv = (TextView)mView.findViewById(R.id.sort_scan_tv);
+    }
+
+    @Override
+    public void initData() {
         mGridView.setAdapter(new GridViewAdapter(getActivity()));
+    }
+
+    @Override
+    public void initListener() {
+        mSortScanTv.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch(view.getId()){
+            case R.id.sort_scan_tv:
+                CommonUtil.startActivity(getActivity(), ScanActivity.class);
+                break;
+        }
     }
 
     class GridViewAdapter extends BaseAdapter{

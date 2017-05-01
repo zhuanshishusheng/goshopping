@@ -26,6 +26,7 @@ public class ScanActivity extends BaseActivity implements QRCodeView.Delegate, S
     private LinearLayout mScanResult;
     private TextView mScanResultTextView;
     private TextView mScanResultOpenButton;
+    private ImageView mScanReturn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,6 +43,7 @@ public class ScanActivity extends BaseActivity implements QRCodeView.Delegate, S
         mScanResultImageView = (ImageView)findViewById(R.id.scan_result_iv);
         mScanResultTextView = (TextView)findViewById(R.id.scan_result_tv);
         mScanResultOpenButton = (TextView)findViewById(R.id.scan_result_open);
+        mScanReturn = (ImageView)findViewById(R.id.scan_return_iv);
     }
 
     @Override
@@ -53,6 +55,7 @@ public class ScanActivity extends BaseActivity implements QRCodeView.Delegate, S
     public void initListener() {
         mScanResultImageView.setOnClickListener(this);
         mScanResultOpenButton.setOnClickListener(this);
+        mScanReturn.setOnClickListener(this);
     }
 
     @Override
@@ -122,6 +125,9 @@ public class ScanActivity extends BaseActivity implements QRCodeView.Delegate, S
                 break;
             case R.id.scan_result_open:
                 mScanPresenter.openBrowser(this,uri);
+                break;
+            case R.id.scan_return_iv:
+                finish();
                 break;
         }
     }
