@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import app.m15.cn.goshopping.R;
 import app.m15.cn.goshopping.activity.scan.ScanActivity;
+import app.m15.cn.goshopping.activity.search.SearchActivity;
 import app.m15.cn.goshopping.util.CommonUtil;
 
 /**
@@ -35,6 +36,7 @@ public class SortFragment extends Fragment implements SortContact.View, View.OnC
     private GridView mGridView;
     private SortPresenter mPresenter;
     private TextView mSortScanTv;
+    private TextView mSortSearch;
 
     public static SortFragment getInstance() {
         if (sInstance == null) {
@@ -68,6 +70,7 @@ public class SortFragment extends Fragment implements SortContact.View, View.OnC
     public void initView() {
         mGridView = (GridView) mView.findViewById(R.id.sort_gridview);
         mSortScanTv = (TextView)mView.findViewById(R.id.sort_scan_tv);
+        mSortSearch = (TextView) mView.findViewById(R.id.sort_search);
     }
 
     @Override
@@ -78,6 +81,7 @@ public class SortFragment extends Fragment implements SortContact.View, View.OnC
     @Override
     public void initListener() {
         mSortScanTv.setOnClickListener(this);
+        mSortSearch.setOnClickListener(this);
     }
 
     @Override
@@ -85,6 +89,9 @@ public class SortFragment extends Fragment implements SortContact.View, View.OnC
         switch(view.getId()){
             case R.id.sort_scan_tv:
                 CommonUtil.startActivity(getActivity(), ScanActivity.class);
+                break;
+            case R.id.sort_search:
+                CommonUtil.startActivity(getActivity(), SearchActivity.class);
                 break;
         }
     }

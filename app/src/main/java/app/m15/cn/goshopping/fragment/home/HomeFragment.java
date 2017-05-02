@@ -15,6 +15,7 @@ import java.util.List;
 
 import app.m15.cn.goshopping.R;
 import app.m15.cn.goshopping.activity.scan.ScanActivity;
+import app.m15.cn.goshopping.activity.search.SearchActivity;
 import app.m15.cn.goshopping.util.CommonUtil;
 import app.m15.cn.goshopping.util.GlideImageLoader;
 
@@ -30,6 +31,7 @@ public class HomeFragment extends Fragment implements HomeContact.View, View.OnC
     private HomePresenter mPresenter;
     private List<Integer> images;
     private TextView mScanView;
+    private TextView mSearchView;
 
     public static HomeFragment getInstance() {
         if (sInstance == null) {
@@ -61,6 +63,7 @@ public class HomeFragment extends Fragment implements HomeContact.View, View.OnC
     public void initView() {
         mBanner = (Banner)mView.findViewById(R.id.home_banner_view);
         mScanView = (TextView)mView.findViewById(R.id.home_scan_view);
+        mSearchView = (TextView)mView.findViewById(R.id.home_search_textview);
     }
 
     @Override
@@ -73,6 +76,7 @@ public class HomeFragment extends Fragment implements HomeContact.View, View.OnC
     @Override
     public void initListener() {
         mScanView.setOnClickListener(this);
+        mSearchView.setOnClickListener(this);
     }
 
     @Override
@@ -90,6 +94,9 @@ public class HomeFragment extends Fragment implements HomeContact.View, View.OnC
         switch (view.getId()){
             case R.id.home_scan_view:
                 CommonUtil.startActivity(getActivity(),ScanActivity.class);
+                break;
+            case R.id.home_search_textview:
+                CommonUtil.startActivity(getActivity(), SearchActivity.class);
                 break;
         }
     }

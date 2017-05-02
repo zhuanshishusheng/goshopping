@@ -6,29 +6,21 @@ import android.support.annotation.Nullable;
 import app.m15.cn.goshopping.R;
 import app.m15.cn.goshopping.base.BaseActivity;
 
+
 /**
- * Created by 赵鹏 on 2017/4/17.
+ * Created by Administrator on 2017/5/1 0001.
+ * http://www.jianshu.com/p/3682f6536e49
  */
 
-public class SearchActivity extends BaseActivity implements SearchContact.View{
+public class SearchActivity extends BaseActivity {
+
+    private SearchView mSearchView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-    }
-
-    @Override
-    public void initView() {
 
     }
 
-    @Override
-    public void initData() {
-
-    }
-
-    @Override
-    public void initListener() {
-
-    }
 }
