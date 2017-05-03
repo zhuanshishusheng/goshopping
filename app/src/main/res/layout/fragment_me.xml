@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:background="@color/meGray"
-              android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/meGray"
+    android:orientation="vertical">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -18,53 +20,60 @@
                 android:layout_width="match_parent"
                 android:layout_height="193dp"
                 android:background="@mipmap/me_top_bg">
+
                 <ImageButton
                     android:layout_width="28dp"
                     android:layout_height="28dp"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="30dp"
                     android:layout_marginTop="20dp"
-                    android:src="@mipmap/me_person_set"/>
+                    android:src="@mipmap/me_person_set" />
+
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="30dp"
-                    android:src="@mipmap/set_img"/>
+                    android:src="@mipmap/set_img" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="OPPO账号:157******81"
                     android:textColor="@color/white"
-                    android:textSize="14dp"/>
+                    android:textSize="14dp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="粉丝: 0"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="关注: 0 "
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="被喜欢: 0 "
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -74,6 +83,7 @@
                 android:layout_marginTop="@dimen/me_distance_select"
                 android:background="@color/white"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -82,12 +92,15 @@
                     android:gravity="center"
                     android:paddingTop="10dp"
                     android:text="购物车"
-                    android:textSize="12dp"
-                    android:textColor="@android:color/black"/>
-                <View android:layout_width="1dp"
-                      android:layout_height="40dp"
-                      android:layout_marginTop="10dp"
-                      android:background="@color/mainBackGround"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="12dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/mainBackGround" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -96,12 +109,15 @@
                     android:gravity="center"
                     android:paddingTop="10dp"
                     android:text="订单"
-                    android:textSize="12dp"
-                    android:textColor="@android:color/black"/>
-                <View android:layout_width="1dp"
-                      android:layout_height="40dp"
-                      android:layout_marginTop="10dp"
-                      android:background="@color/mainBackGround"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="12dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/mainBackGround" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -110,58 +126,68 @@
                     android:gravity="center"
                     android:paddingTop="10dp"
                     android:text="消息"
-                    android:textSize="12dp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="12dp" />
             </LinearLayout>
+
             <app.m15.cn.goshopping.view.MeSelectView
+                android:id="@+id/me_select_love"
                 android:layout_width="match_parent"
-                android:background="@color/white"
-                android:layout_marginTop="@dimen/me_distance_select"
                 android:layout_height="60dp"
+                android:layout_marginTop="@dimen/me_distance_select"
+                android:background="@drawable/sort_select_bg_color"
                 app:icon="@mipmap/me_love_icon"
                 app:viewText="喜欢的宝贝"
-                app:viewTextSize="18dp"/>
-            <View android:layout_width="match_parent"
-                  android:layout_height="1dp"
-            android:layout_marginLeft="50dp"/>
-            <app.m15.cn.goshopping.view.MeSelectView
-                android:layout_width="match_parent"
-                android:background="@color/white"
-                android:layout_height="60dp"
-                app:icon="@mipmap/me_address_icon"
-                app:viewText="收货地址管理"
-                app:viewTextSize="18dp"/>
+                app:viewTextSize="18dp" />
 
-
-            <app.m15.cn.goshopping.view.MeSelectView
-                android:layout_width="match_parent"
-                android:background="@color/white"
-                android:layout_height="60dp"
-                android:layout_marginTop="@dimen/me_distance_select"
-                app:icon="@mipmap/me_card_icon"
-                app:viewText="我的帖子"
-                app:viewTextSize="18dp" android:id="@+id/meSelectView"/>
-
-            <app.m15.cn.goshopping.view.MeSelectView
-                android:layout_width="match_parent"
-                android:background="@color/white"
-                android:layout_marginTop="@dimen/me_distance_select"
-                android:layout_height="60dp"
-                app:icon="@mipmap/me_shop_forum_icon"
-                app:viewText="购物论坛"
-                app:viewTextSize="18dp"/>
-            <View android:layout_width="match_parent"
-                  android:layout_height="1dp" />
-            <app.m15.cn.goshopping.view.MeSelectView
-                android:layout_width="match_parent"
-                android:background="@color/white"
-                android:layout_height="60dp"
-                app:icon="@mipmap/me_help"
-                app:viewText="帮助与反馈"
-                app:viewTextSize="18dp"/>
             <View
                 android:layout_width="match_parent"
-                android:layout_height="10dp"/>
+                android:layout_height="1dp"
+                android:layout_marginLeft="50dp" />
+
+            <app.m15.cn.goshopping.view.MeSelectView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/white"
+                app:icon="@mipmap/me_address_icon"
+                app:viewText="收货地址管理"
+                app:viewTextSize="18dp" />
+
+
+            <app.m15.cn.goshopping.view.MeSelectView
+                android:id="@+id/meSelectView"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/me_distance_select"
+                android:background="@color/white"
+                app:icon="@mipmap/me_card_icon"
+                app:viewText="我的帖子"
+                app:viewTextSize="18dp" />
+
+            <app.m15.cn.goshopping.view.MeSelectView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/me_distance_select"
+                android:background="@color/white"
+                app:icon="@mipmap/me_shop_forum_icon"
+                app:viewText="购物论坛"
+                app:viewTextSize="18dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+            <app.m15.cn.goshopping.view.MeSelectView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/white"
+                app:icon="@mipmap/me_help"
+                app:viewText="帮助与反馈"
+                app:viewTextSize="18dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
         </LinearLayout>
 
     </ScrollView>

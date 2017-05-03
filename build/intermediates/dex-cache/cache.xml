@@ -147,6 +147,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.12.0\3742beff8024d0a0073d284b7c5e4cbf73d99b25\okio-1.12.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3742beff8024d0a0073d284b7c5e4cbf73d99b25">
+        <dex dex="D:\zxl\goshopping\app\build\intermediates\pre-dexed\debug\okio-1.12.0_b08f41d5c651425814124acdb4968a1e1d0b1c3e.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Administrator\.android\build-cache\0bd9e306a679ce0bce1a1f5ebe50f86fe720c80f\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -162,6 +171,15 @@
         revision="25.0.2"
         sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
         <dex dex="D:\zxl\goshopping\app\build\intermediates\pre-dexed\debug\classes_514f4ef7fadfc98b0f8121ce620b1a1e9c1e3be0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.7.0\6edbebdd8868708db718d15c09c4b28037fd487e\okhttp-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6edbebdd8868708db718d15c09c4b28037fd487e">
+        <dex dex="D:\zxl\goshopping\app\build\intermediates\pre-dexed\debug\okhttp-3.7.0_5fe48df42b4b143a1f7a0817ac92bb352cf626be.jar" />
     </item>
     <item
         is-multidex="false"

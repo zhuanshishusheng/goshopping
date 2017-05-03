@@ -3,6 +3,7 @@ package app.m15.cn.goshopping.fragment.sort;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import app.m15.cn.goshopping.R;
@@ -21,7 +23,11 @@ import app.m15.cn.goshopping.util.CommonUtil;
  * Created by liueg on 2017/2/4.
  */
 
-public class SortFragment extends Fragment implements SortContact.View, View.OnClickListener {
+public class SortFragment extends Fragment implements SortContact.View, View.OnClickListener, RadioGroup.OnCheckedChangeListener {
+    /*RadioButton Id*/
+    private final String[] rgIds={"推荐","上衣","裙子","裤子","鞋子","男装",
+            "女包","配饰","零食","内衣","美妆护肤","日用百货"};
+
     private static SortFragment sInstance;
     private String[] jacketNames={"蕾丝衫","牛仔衬衫","衬衫","雪纺衫","短袖t","背心","防晒衫",
             "透视衫","针织衫","长袖t","宽松上衣","开衫","小西装"};
@@ -37,6 +43,7 @@ public class SortFragment extends Fragment implements SortContact.View, View.OnC
     private SortPresenter mPresenter;
     private TextView mSortScanTv;
     private TextView mSortSearch;
+    private RadioGroup mSortRadioGroup;
 
     public static SortFragment getInstance() {
         if (sInstance == null) {
@@ -71,6 +78,7 @@ public class SortFragment extends Fragment implements SortContact.View, View.OnC
         mGridView = (GridView) mView.findViewById(R.id.sort_gridview);
         mSortScanTv = (TextView)mView.findViewById(R.id.sort_scan_tv);
         mSortSearch = (TextView) mView.findViewById(R.id.sort_search);
+        mSortRadioGroup = (RadioGroup)mView.findViewById(R.id.sort_select_rg);
     }
 
     @Override
@@ -82,6 +90,7 @@ public class SortFragment extends Fragment implements SortContact.View, View.OnC
     public void initListener() {
         mSortScanTv.setOnClickListener(this);
         mSortSearch.setOnClickListener(this);
+        mSortRadioGroup.setOnCheckedChangeListener(this);
     }
 
     @Override
@@ -94,6 +103,11 @@ public class SortFragment extends Fragment implements SortContact.View, View.OnC
                 CommonUtil.startActivity(getActivity(), SearchActivity.class);
                 break;
         }
+    }
+
+    @Override
+    public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
     }
 
     class GridViewAdapter extends BaseAdapter{

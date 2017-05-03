@@ -41,6 +41,7 @@
             android:layout_height="match_parent"
             android:scrollbars="none">
             <RadioGroup
+                android:id="@+id/sort_select_rg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal">
@@ -48,6 +49,12 @@
                     style="@style/SortRadioButton"
                     android:button="@null"
                     android:text="推荐"
+                    android:checked="true"
+                    android:background="@drawable/sort_radiobutton_bg"/>
+                <RadioButton
+                    style="@style/SortRadioButton"
+                    android:button="@null"
+                    android:text="上衣"
                     android:checked="true"
                     android:background="@drawable/sort_radiobutton_bg"/>
                 <RadioButton
