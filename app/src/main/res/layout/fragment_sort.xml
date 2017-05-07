@@ -46,16 +46,15 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal">
                 <RadioButton
+                    android:id="@+id/sort_select_recommend"
                     style="@style/SortRadioButton"
                     android:button="@null"
                     android:text="推荐"
-                    android:checked="true"
                     android:background="@drawable/sort_radiobutton_bg"/>
                 <RadioButton
                     style="@style/SortRadioButton"
                     android:button="@null"
                     android:text="上衣"
-                    android:checked="true"
                     android:background="@drawable/sort_radiobutton_bg"/>
                 <RadioButton
                     style="@style/SortRadioButton"

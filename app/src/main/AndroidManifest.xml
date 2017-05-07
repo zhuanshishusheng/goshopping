@@ -27,6 +27,7 @@
         </activity>
         <activity android:name=".activity.search.SearchActivity"/>
         <activity android:name=".fragment.me.MyLoveActivity"/>
+        <activity android:name=".fragment.me.HelpActivity"/>
     </application>
 
 </manifest>

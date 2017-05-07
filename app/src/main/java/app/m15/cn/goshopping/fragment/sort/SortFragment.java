@@ -84,6 +84,7 @@ public class SortFragment extends Fragment implements SortContact.View, View.OnC
     @Override
     public void initData() {
         mGridView.setAdapter(new GridViewAdapter(getActivity()));
+        mSortRadioGroup.check(R.id.sort_select_recommend);
     }
 
     @Override

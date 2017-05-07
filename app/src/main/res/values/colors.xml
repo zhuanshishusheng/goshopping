@@ -10,4 +10,5 @@
     <color name="white">#FFFFFF</color>
     <color name="meGray">#F5F5F5</color>
     <color name="scanResultBlack">#272727</color>
+    <color name="grayLine">#e6e6e6</color>
 </resources>

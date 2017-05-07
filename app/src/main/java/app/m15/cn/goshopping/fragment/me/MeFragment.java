@@ -20,6 +20,7 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
     private View mView;
     private MePresenter mPresenter;
     private MeSelectView mSelectLove;
+    private MeSelectView mSelectHelp;
 
     public static MeFragment getInstance() {
         if (sInstance == null) {
@@ -51,6 +52,7 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
     @Override
     public void initView() {
         mSelectLove = (MeSelectView)mView.findViewById(R.id.me_select_love);
+        mSelectHelp =(MeSelectView)mView.findViewById(R.id.me_select_help);
     }
 
     @Override
@@ -61,6 +63,7 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
     @Override
     public void initListener() {
         mSelectLove.setOnClickListener(this);
+        mSelectHelp.setOnClickListener(this);
     }
 
     @Override
@@ -68,6 +71,9 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
         switch (view.getId()){
             case R.id.me_select_love:
                 CommonUtil.startActivity(getActivity(),MyLoveActivity.class);
+                break;
+            case R.id.me_select_help:
+                CommonUtil.startActivity(getActivity(),HelpActivity.class);
                 break;
         }
     }

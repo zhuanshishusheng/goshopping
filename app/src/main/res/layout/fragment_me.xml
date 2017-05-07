@@ -21,31 +21,43 @@
                 android:layout_height="193dp"
                 android:background="@mipmap/me_top_bg">
 
-                <ImageButton
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="30dp"
+                    android:layout_marginRight="20dp"
                     android:layout_marginTop="20dp"
-                    android:src="@mipmap/me_person_set" />
+                    android:src="@mipmap/set_icon48" />
 
-                <ImageButton
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="30dp"
-                    android:src="@mipmap/set_img" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="OPPO账号:157******81"
-                    android:textColor="@color/white"
-                    android:textSize="14dp" />
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/more_icon48_white" />
 
                 <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <app.m15.cn.goshopping.view.CustomImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@mipmap/me_circle_ex"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OPPO账号:157******81"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginBottom="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
@@ -55,6 +67,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:textSize="12dp"
                         android:gravity="center_horizontal"
                         android:text="粉丝: 0"
                         android:textColor="@color/white" />
@@ -63,6 +76,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:textSize="12dp"
                         android:gravity="center_horizontal"
                         android:text="关注: 0 "
                         android:textColor="@color/white" />
@@ -73,6 +87,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="被喜欢: 0 "
+                        android:textSize="12dp"
                         android:textColor="@color/white" />
                 </LinearLayout>
             </RelativeLayout>
@@ -148,7 +163,7 @@
             <app.m15.cn.goshopping.view.MeSelectView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="@color/white"
+                android:background="@drawable/sort_select_bg_color"
                 app:icon="@mipmap/me_address_icon"
                 app:viewText="收货地址管理"
                 app:viewTextSize="18dp" />
@@ -159,7 +174,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="@dimen/me_distance_select"
-                android:background="@color/white"
+                android:background="@drawable/sort_select_bg_color"
                 app:icon="@mipmap/me_card_icon"
                 app:viewText="我的帖子"
                 app:viewTextSize="18dp" />
@@ -168,7 +183,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="@dimen/me_distance_select"
-                android:background="@color/white"
+                android:background="@drawable/sort_select_bg_color"
                 app:icon="@mipmap/me_shop_forum_icon"
                 app:viewText="购物论坛"
                 app:viewTextSize="18dp" />
@@ -178,9 +193,10 @@
                 android:layout_height="1dp" />
 
             <app.m15.cn.goshopping.view.MeSelectView
+                android:id="@+id/me_select_help"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="@color/white"
+                android:background="@drawable/sort_select_bg_color"
                 app:icon="@mipmap/me_help"
                 app:viewText="帮助与反馈"
                 app:viewTextSize="18dp" />
