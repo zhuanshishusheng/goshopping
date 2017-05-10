@@ -1,5 +1,7 @@
 package app.m15.cn.goshopping.fragment.sort;
 
+import app.m15.cn.goshopping.net.OKHttpManager;
+
 public class SortContact {
 
     interface View{
@@ -12,5 +14,7 @@ public class SortContact {
         void init();
         void destroyView();
     }
-
+    interface Support{
+        void changSortList(String string,OKHttpManager.HttpCallBack callBack);
+    }
 }

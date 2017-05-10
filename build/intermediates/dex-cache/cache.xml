@@ -34,17 +34,8 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="ab08f9c15d575950b768340e231238a6ad1db018">
+        sha1="2a2d63c0147b5866562ab944de12e5c422c83033">
         <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_9cc5498e51b8b91da32ad279ce21c17c8711bf96\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\aa2a91584d2556d9d3f18acd449bc8ce9142e316\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c4b4f95ecec06763ebde6be9953e23cac4c611ef\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -56,15 +47,6 @@
         <dex dex="D:\zxl\goshopping\app\build\intermediates\pre-dexed\debug\classes_74caca76cf26a657e72ec59fd106d50f189dc94e.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\d3cd3ebf8c65f9999323f6b57fe9f383f050cdf3\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b1db47be1b71a1aec60bdc1bf4fa302bfd1a2ef5\classes.dex" />
-    </item>
-    <item
         is-multidex="false"
         jar="C:\Users\Administrator\.android\build-cache\aa2a91584d2556d9d3f18acd449bc8ce9142e316\output\jars\classes.jar"
         jumboMode="false"
@@ -72,15 +54,6 @@
         revision="25.0.2"
         sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
         <dex dex="D:\zxl\goshopping\app\build\intermediates\pre-dexed\debug\classes_c4b4f95ecec06763ebde6be9953e23cac4c611ef.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.7.0_1f3ddf859a86296da03fddcf50d19f29d652df81\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -101,15 +74,6 @@
         <dex dex="D:\zxl\goshopping\app\build\intermediates\pre-dexed\debug\classes_b1db47be1b71a1aec60bdc1bf4fa302bfd1a2ef5.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\8e85f037578b3f06d9e342d75fb01e05d2b8aae6\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_74caca76cf26a657e72ec59fd106d50f189dc94e\classes.dex" />
-    </item>
-    <item
         is-multidex="false"
         jar="C:\Users\Administrator\.android\build-cache\d4669bb79cd2cfcd2c8d8fcd78d95ad6de3bd73f\output\jars\classes.jar"
         jumboMode="true"
@@ -138,39 +102,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\d4b9a45cb869586fff337cbd6a9cfd322b692ede\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="476390e81d32f9d08f9f5aab6c2b28f314a37828">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4581c02628e1e8761377c4ba3cc3c861923ae954\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="D:\zxl\goshopping\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
         <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_28c1613d497d4ceabcff8e8584d7b58b94fe371f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\d4669bb79cd2cfcd2c8d8fcd78d95ad6de3bd73f\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="aee64634871d88a419d59eb743c1258a60f19700">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3e9bf96eb75733598358f87887f21387fd9fcad4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\4cd32d76d580c20d8e81d510422aa223f53eb73e\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_05f233b181b24b38497a5fa4b3f5f4c589f07471\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -191,24 +128,6 @@
         <dex dex="D:\zxl\goshopping\app\build\intermediates\pre-dexed\debug\classes_05f233b181b24b38497a5fa4b3f5f4c589f07471.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\library-2.4.0_dd460f45d27a359687729c3c169358b1eda3100b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.zxing\core\3.2.1\2287494d4f5f9f3a9a2bb6980e3f32053721b315\core-3.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\core-3.2.1_3f96f72d8bc40481fc852122e0314b3485c288eb\classes.dex" />
-    </item>
-    <item
         is-multidex="false"
         jar="C:\Users\Administrator\.android\build-cache\4cd32d76d580c20d8e81d510422aa223f53eb73e\output\jars\classes.jar"
         jumboMode="true"
@@ -216,24 +135,6 @@
         revision="25.0.2"
         sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
         <dex dex="D:\zxl\goshopping\app\build\intermediates\pre-dexed\debug\classes_05f233b181b24b38497a5fa4b3f5f4c589f07471.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\5d84b4d238a13e8e6cc9922f63597c4efae44c57\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f577701fa1e05f14bde07bfbd522ced08fe1f7a0">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a8820100cd5598a0a30e68ed5c525ebef795f234\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.7.0\6edbebdd8868708db718d15c09c4b28037fd487e\okhttp-3.7.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6edbebdd8868708db718d15c09c4b28037fd487e">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.7.0_5fe48df42b4b143a1f7a0817ac92bb352cf626be\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -254,15 +155,6 @@
         <dex dex="D:\zxl\goshopping\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.0_af23022100897a566a897f2bf11fdd70edb8aabc.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\8b91fecfa5b0bb62be8b045879c51692dedc4e57\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="86c62d01a8ee039fc5f629a34d15de8bf275b5db">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e239a87f35e50f73c39bf28844a48f7ad13ebeae\classes.dex" />
-    </item>
-    <item
         is-multidex="false"
         jar="C:\Users\Administrator\.android\build-cache\34cb5c4263a3adb15f223b79e9e8668c2f346b46\output\jars\classes.jar"
         jumboMode="false"
@@ -270,24 +162,6 @@
         revision="25.0.2"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
         <dex dex="D:\zxl\goshopping\app\build\intermediates\pre-dexed\debug\classes_df67c83e86c94963c988cc5bd04436f88f813bef.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.12.0\3742beff8024d0a0073d284b7c5e4cbf73d99b25\okio-1.12.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3742beff8024d0a0073d284b7c5e4cbf73d99b25">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.12.0_b08f41d5c651425814124acdb4968a1e1d0b1c3e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\0bd9e306a679ce0bce1a1f5ebe50f86fe720c80f\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_514f4ef7fadfc98b0f8121ce620b1a1e9c1e3be0\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -317,15 +191,6 @@
         <dex dex="D:\zxl\goshopping\app\build\intermediates\pre-dexed\debug\classes_514f4ef7fadfc98b0f8121ce620b1a1e9c1e3be0.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\34cb5c4263a3adb15f223b79e9e8668c2f346b46\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_df67c83e86c94963c988cc5bd04436f88f813bef\classes.dex" />
-    </item>
-    <item
         is-multidex="false"
         jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.7.0\6edbebdd8868708db718d15c09c4b28037fd487e\okhttp-3.7.0.jar"
         jumboMode="false"
@@ -342,15 +207,6 @@
         revision="25.0.2"
         sha1="86c62d01a8ee039fc5f629a34d15de8bf275b5db">
         <dex dex="D:\zxl\goshopping\app\build\intermediates\pre-dexed\debug\classes_e239a87f35e50f73c39bf28844a48f7ad13ebeae.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\0d1bb5855817baf0dd8da89181b07ca58ab0ae21\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="5079e5fd491e9cda6597074c383db035e25e4696">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_68946421c888d8a4f274e820b2c87e21be5e8707\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -372,12 +228,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
+        <dex dex="D:\zxl\goshopping\app\build\intermediates\pre-dexed\debug\gson-2.8.0_eca52502deb48db964b5e6d39d16c5eaa7bb0998.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\AS\android_sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
         <dex dex="D:\zxl\goshopping\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.0_af23022100897a566a897f2bf11fdd70edb8aabc.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
+        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.8.0_eca52502deb48db964b5e6d39d16c5eaa7bb0998\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -387,33 +261,6 @@
         revision="25.0.2"
         sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
         <dex dex="D:\zxl\goshopping\app\build\intermediates\pre-dexed\debug\classes_adab00a2c90e8176e0dbb0d474975f1e27639803.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\1047ebc3a642d4e2e9eea5544a993fc5af3bdb78\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_adab00a2c90e8176e0dbb0d474975f1e27639803\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\AS\android_sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.0_af23022100897a566a897f2bf11fdd70edb8aabc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.android\build-cache\401dfce6534f62ebac2af1fdcb4be853267f14b5\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
-        <dex dex="D:\zxl\goshopping\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0abca3a40dd0d6e2372a985ff87f5d2a7bfe7983\classes.dex" />
     </item>
 
 </items>

@@ -2,48 +2,75 @@ package app.m15.cn.goshopping.fragment.sort;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import app.m15.cn.goshopping.R;
 import app.m15.cn.goshopping.activity.scan.ScanActivity;
 import app.m15.cn.goshopping.activity.search.SearchActivity;
+import app.m15.cn.goshopping.bean.SortBean;
+import app.m15.cn.goshopping.net.OKHttpManager;
+import app.m15.cn.goshopping.net.RequestUtil;
 import app.m15.cn.goshopping.util.CommonUtil;
+import app.m15.cn.goshopping.util.GlideCacheUtil;
 
 /**
  * Created by liueg on 2017/2/4.
  */
 
-public class SortFragment extends Fragment implements SortContact.View, View.OnClickListener, RadioGroup.OnCheckedChangeListener {
-    /*RadioButton Id*/
-    private final String[] rgIds={"推荐","上衣","裙子","裤子","鞋子","男装",
-            "女包","配饰","零食","内衣","美妆护肤","日用百货"};
+public class SortFragment extends Fragment implements SortContact.View, View.OnClickListener, RadioGroup.OnCheckedChangeListener,SortContact.Support, AdapterView.OnItemClickListener {
+    private List<SortBean.DataBean> mSortList;
 
     private static SortFragment sInstance;
-    private String[] jacketNames={"蕾丝衫","牛仔衬衫","衬衫","雪纺衫","短袖t","背心","防晒衫",
-            "透视衫","针织衫","长袖t","宽松上衣","开衫","小西装"};
-    private int[] jacketIds={R.mipmap.sort_jacket_leisishan_img,R.mipmap.sort_jacket_niuzaichenshan_img
-    ,R.mipmap.sort_jacket_chenshan_img,R.mipmap.sort_jacket_xuefangshan_img
-    ,R.mipmap.sort_jacket_duanxiut_img,R.mipmap.sort_jacket_beixin_img
-    ,R.mipmap.sort_jacket_fangshaishan_img,R.mipmap.sort_jacket_toushishan_img
-    ,R.mipmap.sort_jacket_zhenzhishan_img,R.mipmap.sort_jacket_changxiut_img
-    ,R.mipmap.sort_jacket_kuansongshangyi_img,R.mipmap.sort_jacket_kaishan_img
-    ,R.mipmap.sort_jacket_xiaoxizhuang_img};
     private View mView;
     private GridView mGridView;
     private SortPresenter mPresenter;
     private TextView mSortScanTv;
     private TextView mSortSearch;
     private RadioGroup mSortRadioGroup;
+    private OKHttpManager okHttpManager;
+    private Gson gson;
+
+    public Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch(msg.arg1){
+                case 1:
+                    Toast.makeText(getActivity(), "网络连接错误", Toast.LENGTH_SHORT).show();
+                    break;
+                case 2:
+                    mGridView.setAdapter(mGridViewAdapter);
+                    break;
+                case 3:
+                    GlideCacheUtil.getInstance().clearImageMemoryCache(getActivity());
+                    mGridViewAdapter.notifyDataSetChanged();
+                    break;
+
+            }
+        }
+    };
+    private GridViewAdapter mGridViewAdapter;
 
     public static SortFragment getInstance() {
         if (sInstance == null) {
@@ -83,15 +110,42 @@ public class SortFragment extends Fragment implements SortContact.View, View.OnC
 
     @Override
     public void initData() {
-        mGridView.setAdapter(new GridViewAdapter(getActivity()));
+        mSortList=new ArrayList<>();
+        gson=new Gson();
+        okHttpManager = OKHttpManager.getInstance();
+        mGridViewAdapter = new GridViewAdapter(getActivity());
         mSortRadioGroup.check(R.id.sort_select_recommend);
-    }
+        //获取默认信息
+        changSortList("recommend", new OKHttpManager.HttpCallBack() {
+            @Override
+            public void onError(Exception e) {
+                sendErrorMessage();
+            }
 
+            @Override
+            public void onSuccess(String string) {
+                sendSuccess(string,2);
+            }
+        });
+    }
+    private void sendErrorMessage(){
+        Message message=new Message();
+        message.arg1=1;
+        handler.sendMessage(message);
+    }
+    private void sendSuccess(String string,int type){
+        SortBean sortBean=gson.fromJson(string,SortBean.class);
+        mSortList=sortBean.getData();
+        Message message=new Message();
+        message.arg1=type;
+        handler.sendMessage(message);
+    }
     @Override
     public void initListener() {
         mSortScanTv.setOnClickListener(this);
         mSortSearch.setOnClickListener(this);
         mSortRadioGroup.setOnCheckedChangeListener(this);
+        mGridView.setOnItemClickListener(this);
     }
 
     @Override
@@ -108,7 +162,63 @@ public class SortFragment extends Fragment implements SortContact.View, View.OnC
 
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+        switch(i){
+            case R.id.sort_select_recommend:
+                changSortList("recommend", new OKHttpManager.HttpCallBack() {
+                    @Override
+                    public void onError(Exception e) {
+                        sendErrorMessage();
+                    }
 
+                    @Override
+                    public void onSuccess(String string) {
+                        sendSuccess(string,3);
+                    }
+                });
+                break;
+            case R.id.sort_select_jacket:
+                changSortList("jacket", new OKHttpManager.HttpCallBack() {
+                    @Override
+                    public void onError(Exception e) {
+                        sendErrorMessage();
+                    }
+
+                    @Override
+                    public void onSuccess(String string) {
+                        sendSuccess(string,3);
+                    }
+                });
+                break;
+            default:
+                changSortList("recommend", new OKHttpManager.HttpCallBack() {
+                    @Override
+                    public void onError(Exception e) {
+                        sendErrorMessage();
+                    }
+
+                    @Override
+                    public void onSuccess(String string) {
+                        sendSuccess(string,3);
+                    }
+                });
+        }
+
+    }
+
+    @Override
+    public void changSortList(String string, OKHttpManager.HttpCallBack callBack) {
+        String url=RequestUtil.REQUEST_HEAD + "/sort?type="+string;
+        okHttpManager.getString(url,callBack);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+          Intent intent=new Intent();
+         intent.setClass(getActivity(),GoodsActivity.class);
+        Bundle bundle=new Bundle();
+        bundle.putString("name",mSortList.get(i).getName());
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     class GridViewAdapter extends BaseAdapter{
@@ -118,7 +228,7 @@ public class SortFragment extends Fragment implements SortContact.View, View.OnC
         }
         @Override
         public int getCount() {
-            return jacketNames.length;
+            return mSortList.size();
         }
 
         @Override
@@ -143,8 +253,12 @@ public class SortFragment extends Fragment implements SortContact.View, View.OnC
             }else{
                 viewHolder= (ViewHolder) convertView.getTag();
             }
-            viewHolder.mTextView.setText(jacketNames[position]);
-            viewHolder.mImageView.setImageResource(jacketIds[position]);
+            viewHolder.mTextView.setText(mSortList.get(position).getName());
+            //网络加载图片
+            Glide.with(getActivity()).load(RequestUtil.REQUEST_HEAD+mSortList.get(position).getImageUrl())
+                    .placeholder(R.mipmap.sort_error_load)
+                    .into(viewHolder.mImageView);
+
             return convertView;
         }
 
@@ -152,5 +266,9 @@ public class SortFragment extends Fragment implements SortContact.View, View.OnC
             TextView mTextView;
             ImageView mImageView;
         }
+    }
+
+    public interface CallBack{
+        public void getResult(String string);
     }
 }

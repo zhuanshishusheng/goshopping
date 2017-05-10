@@ -49,7 +49,7 @@ public class OKHttpManager {
      * @param url
      * @param httpCallBack
      */
-    public void getProtoString(String url, final HttpCallBack httpCallBack) {
+    public void getString(String url, final HttpCallBack httpCallBack) {
         //创建okHttp请求
         Request request = new Request.Builder().url(url).build();
         mOkHttpClient.newCall(request).enqueue(new Callback() {

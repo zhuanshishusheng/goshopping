@@ -28,6 +28,7 @@
         <activity android:name=".activity.search.SearchActivity"/>
         <activity android:name=".fragment.me.MyLoveActivity"/>
         <activity android:name=".fragment.me.HelpActivity"/>
+        <activity android:name=".fragment.sort.GoodsActivity"/>
     </application>
 
 </manifest>

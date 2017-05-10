@@ -7,12 +7,14 @@
     <ImageView
         android:id="@+id/item_sort_gridview_imageview"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:src="@mipmap/sort_error_load"/>
     <TextView
         android:id="@+id/item_sort_gridview_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:text="正在加载"
         android:textSize="12dp"
         android:textColor="@android:color/black"/>
 </LinearLayout>
