@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -19,12 +20,13 @@ import app.m15.cn.goshopping.base.BaseActivity;
 import app.m15.cn.goshopping.bean.GoodBean;
 import app.m15.cn.goshopping.net.OKHttpManager;
 import app.m15.cn.goshopping.net.RequestUtil;
+import app.m15.cn.goshopping.util.CommonUtil;
 
 /**
  * Created by Administrator on 2017/5/10 0010.
  */
 
-public class GoodsActivity extends BaseActivity implements View.OnClickListener {
+public class GoodsActivity extends BaseActivity implements View.OnClickListener, MyRecyclerViewAdapter.OnItemClickListener {
     private List<GoodBean.DataBean> mGoodList;
 
     private RecyclerView recyclerView;
@@ -41,6 +43,7 @@ public class GoodsActivity extends BaseActivity implements View.OnClickListener 
                 case 2:
                     adapter = new MyRecyclerViewAdapter(GoodsActivity.this,mGoodList);
                     recyclerView.setAdapter(adapter);
+                    adapter.setOnItemClickListener(GoodsActivity.this);
                     break;
 
             }
@@ -66,7 +69,6 @@ public class GoodsActivity extends BaseActivity implements View.OnClickListener 
 
     private void initListener() {
         mReturn.setOnClickListener(this);
-
     }
 
     private void initData() {
@@ -117,5 +119,11 @@ public class GoodsActivity extends BaseActivity implements View.OnClickListener 
                 finish();
                 break;
         }
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        CommonUtil.startActivity(this,GoodsDetialActivity.class);
+       Log.i("ceshi",mGoodList.get(position).getImageUrl1());
     }
 }

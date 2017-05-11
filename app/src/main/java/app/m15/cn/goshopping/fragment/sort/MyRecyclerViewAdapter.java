@@ -19,9 +19,11 @@ import app.m15.cn.goshopping.net.RequestUtil;
  * Created by Administrator on 2017/5/10 0010.
  */
 
-public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.OneViewHolder> {
+public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.OneViewHolder> implements View.OnClickListener {
     private List<GoodBean.DataBean> list;
     private Context context;
+
+    private OnItemClickListener onItemClickListener=null;
     public MyRecyclerViewAdapter(Context context,List list){
         this.list=list;
         this.context=context;
@@ -29,17 +31,29 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     @Override
     public OneViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new OneViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.recycleview_item, parent, false));
+        View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.recycleview_item, parent, false);
+        OneViewHolder oneViewHolder=new OneViewHolder(view);
+        view.setOnClickListener(this);
+        return oneViewHolder;
     }
     @Override
     public void onBindViewHolder(OneViewHolder holder,int position) {
+        holder.itemView.setTag(position);
         //网络加载图片
         Glide.with(context).load(RequestUtil.REQUEST_HEAD+list.get(position).getImageUrl1())
+                .placeholder(R.mipmap.sort_goods_error)
                 .into(holder.imageView);
     }
     @Override
     public int getItemCount() {
         return list.size();
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(onItemClickListener!=null){
+            onItemClickListener.onItemClick(view,(int) view.getTag());
+        }
     }
 
     class OneViewHolder extends RecyclerView.ViewHolder {
@@ -49,5 +63,11 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             super(itemView);
             imageView=(ImageView)itemView.findViewById(R.id.ivImage);
         }
+    }
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.onItemClickListener=listener;
+    }
+    public static interface OnItemClickListener{
+        void onItemClick(View view,int position);
     }
 }
