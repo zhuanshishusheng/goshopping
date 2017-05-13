@@ -6,9 +6,13 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import app.m15.cn.goshopping.R;
+import app.m15.cn.goshopping.base.GSApplication;
 import app.m15.cn.goshopping.util.CommonUtil;
+import app.m15.cn.goshopping.view.CustomImageView;
 import app.m15.cn.goshopping.view.MeSelectView;
 
 /**
@@ -21,6 +25,9 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
     private MePresenter mPresenter;
     private MeSelectView mSelectLove;
     private MeSelectView mSelectHelp;
+    private CustomImageView mLogin;
+    private TextView mLoginUsername;
+    private TextView mUserCar;
 
     public static MeFragment getInstance() {
         if (sInstance == null) {
@@ -53,6 +60,9 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
     public void initView() {
         mSelectLove = (MeSelectView)mView.findViewById(R.id.me_select_love);
         mSelectHelp =(MeSelectView)mView.findViewById(R.id.me_select_help);
+        mLogin = (CustomImageView)mView.findViewById(R.id.me_login_register);
+        mLoginUsername = (TextView)mView.findViewById(R.id.me_user_username);
+        mUserCar =(TextView)mView.findViewById(R.id.me_user_car);
     }
 
     @Override
@@ -64,6 +74,8 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
     public void initListener() {
         mSelectLove.setOnClickListener(this);
         mSelectHelp.setOnClickListener(this);
+        mLogin.setOnClickListener(this);
+        mUserCar.setOnClickListener(this);
     }
 
     @Override
@@ -75,6 +87,32 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
             case R.id.me_select_help:
                 CommonUtil.startActivity(getActivity(),HelpActivity.class);
                 break;
+            case R.id.me_login_register:
+                CommonUtil.startActivity(getActivity(),LoginActivity.class);
+                break;
+            case R.id.me_user_car:
+                enterCar();
+                break;
+        }
+    }
+
+    private void enterCar() {
+        if(GSApplication.getsUserinfo()!=null){
+            CommonUtil.startActivity(getActivity(),CarActivity.class);
+        }else {
+            Toast.makeText(getActivity(), "用户未登录", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        showUserinfo();
+    }
+
+    private void showUserinfo() {
+        if(GSApplication.getsUserinfo()!=null){
+            mLoginUsername.setText("用户:"+GSApplication.getsUserinfo().getUsername());
         }
     }
 }

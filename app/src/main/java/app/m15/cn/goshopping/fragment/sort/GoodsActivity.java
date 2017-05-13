@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -20,7 +19,6 @@ import app.m15.cn.goshopping.base.BaseActivity;
 import app.m15.cn.goshopping.bean.GoodBean;
 import app.m15.cn.goshopping.net.OKHttpManager;
 import app.m15.cn.goshopping.net.RequestUtil;
-import app.m15.cn.goshopping.util.CommonUtil;
 
 /**
  * Created by Administrator on 2017/5/10 0010.
@@ -86,6 +84,7 @@ public class GoodsActivity extends BaseActivity implements View.OnClickListener,
             @Override
             public void onSuccess(String string) {
 
+
                 sendSuccessMessage(string);
 
             }
@@ -123,7 +122,11 @@ public class GoodsActivity extends BaseActivity implements View.OnClickListener,
 
     @Override
     public void onItemClick(View view, int position) {
-        CommonUtil.startActivity(this,GoodsDetialActivity.class);
-       Log.i("ceshi",mGoodList.get(position).getImageUrl1());
+        Intent intent=new Intent(this,GoodsDetialActivity.class);
+        Bundle bundle=new Bundle();
+        bundle.putSerializable("good",mGoodList.get(position));
+        intent.putExtras(bundle);
+        startActivity(intent);
+
     }
 }

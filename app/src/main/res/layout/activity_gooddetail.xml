@@ -34,6 +34,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <ImageView
+                android:id="@+id/gooddetail_image"
                 android:layout_width="match_parent"
                 android:layout_height="360dp"
                 android:src="@mipmap/id10001_image2"
@@ -147,6 +148,7 @@
         android:layout_height="50dp"
         android:background="@color/white">
         <Button
+            android:id="@+id/gooddetail_add_car"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="加入购物车"

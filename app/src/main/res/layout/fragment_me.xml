@@ -45,13 +45,15 @@
                     android:gravity="center_horizontal"
                     android:orientation="vertical">
                     <app.m15.cn.goshopping.view.CustomImageView
+                        android:id="@+id/me_login_register"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:src="@mipmap/me_circle_ex"/>
+                        android:src="@mipmap/me_no_login"/>
                     <TextView
+                        android:id="@+id/me_user_username"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="OPPO账号:157******81"
+                        android:text="未登录 / 注册"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
 
@@ -100,6 +102,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/me_user_car"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

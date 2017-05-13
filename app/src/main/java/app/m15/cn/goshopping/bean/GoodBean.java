@@ -1,5 +1,6 @@
 package app.m15.cn.goshopping.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -31,7 +32,7 @@ public class GoodBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable{
         /**
          * id : 10001
          * imageUrl1 : /images/goods/id10001_image1.jpg
@@ -43,7 +44,7 @@ public class GoodBean {
          * seller : 欧尚巴黎风
          * type : 日韩风
          */
-
+        private static final long serialVersionUID = -7060210544600464481L;
         private int id;
         private String imageUrl1;
         private String imageUrl2;
@@ -53,6 +54,14 @@ public class GoodBean {
         private int price;
         private String seller;
         private String type;
+        private String describe;
+
+        public String getDescribe(){
+            return describe;
+        }
+        public void setDescribe(String describe){
+            this.describe=describe;
+        }
 
         public int getId() {
             return id;
