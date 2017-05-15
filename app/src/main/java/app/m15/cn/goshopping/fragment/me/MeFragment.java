@@ -28,6 +28,7 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
     private CustomImageView mLogin;
     private TextView mLoginUsername;
     private TextView mUserCar;
+    private TextView mOrder;
 
     public static MeFragment getInstance() {
         if (sInstance == null) {
@@ -63,6 +64,7 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
         mLogin = (CustomImageView)mView.findViewById(R.id.me_login_register);
         mLoginUsername = (TextView)mView.findViewById(R.id.me_user_username);
         mUserCar =(TextView)mView.findViewById(R.id.me_user_car);
+        mOrder =(TextView)mView.findViewById(R.id.me_order);
     }
 
     @Override
@@ -76,6 +78,7 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
         mSelectHelp.setOnClickListener(this);
         mLogin.setOnClickListener(this);
         mUserCar.setOnClickListener(this);
+        mOrder.setOnClickListener(this);
     }
 
     @Override
@@ -93,6 +96,17 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
             case R.id.me_user_car:
                 enterCar();
                 break;
+            case R.id.me_order:
+                enterOrder();
+                break;
+        }
+    }
+
+    private void enterOrder() {
+        if(GSApplication.getsUserinfo()!=null){
+            CommonUtil.startActivity(getActivity(),OrderActivity.class);
+        }else {
+            Toast.makeText(getActivity(), "用户未登录", Toast.LENGTH_SHORT).show();
         }
     }
 

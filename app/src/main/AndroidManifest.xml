@@ -32,6 +32,7 @@
         <activity android:name=".fragment.sort.GoodsDetialActivity"/>
         <activity android:name=".fragment.me.LoginActivity" />
         <activity android:name=".fragment.me.CarActivity"/>
+        <activity android:name=".fragment.me.OrderActivity"/>
     </application>
 
 </manifest>

@@ -64,6 +64,15 @@ public class LoginBean {
         private String phone;
         private int userid;
         private String username;
+        private int area;
+
+        public void setArea(int area){
+            this.area=area;
+        }
+        public int getArea(){
+            return area;
+        }
+
 
         public String getPassword() {
             return password;

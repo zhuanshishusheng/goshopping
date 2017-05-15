@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -47,7 +46,7 @@ public class GoodsDetialActivity extends BaseActivity implements View.OnClickLis
                     Toast.makeText(GoodsDetialActivity.this, "加入失败", Toast.LENGTH_SHORT).show();
                     break;
                 case 2:
-
+                    Toast.makeText(GoodsDetialActivity.this, "加入成功", Toast.LENGTH_SHORT).show();
                     break;
 
             }
@@ -142,10 +141,9 @@ public class GoodsDetialActivity extends BaseActivity implements View.OnClickLis
         handler.sendMessage(message);
     }
     private void sendSuccessMessage(String string){
-        Log.i("ceshi",string);
 
-//        Message message=new Message();
-//        message.arg1=2;
-//        handler.sendMessage(message);
+        Message message=new Message();
+        message.arg1=2;
+        handler.sendMessage(message);
     }
 }
