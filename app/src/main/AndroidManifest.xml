@@ -33,6 +33,9 @@
         <activity android:name=".fragment.me.LoginActivity" />
         <activity android:name=".fragment.me.CarActivity"/>
         <activity android:name=".fragment.me.OrderActivity"/>
+        <activity android:name=".fragment.me.RegisterActivity"/>
+        <activity android:name=".fragment.me.MessageActivity"/>
+        <activity android:name=".fragment.me.AddressActivity"/>
     </application>
 
 </manifest>

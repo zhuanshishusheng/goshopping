@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.youth.banner.Banner;
 
@@ -16,6 +17,8 @@ import java.util.List;
 import app.m15.cn.goshopping.R;
 import app.m15.cn.goshopping.activity.scan.ScanActivity;
 import app.m15.cn.goshopping.activity.search.SearchActivity;
+import app.m15.cn.goshopping.base.GSApplication;
+import app.m15.cn.goshopping.fragment.me.OrderActivity;
 import app.m15.cn.goshopping.util.CommonUtil;
 import app.m15.cn.goshopping.util.GlideImageLoader;
 
@@ -32,6 +35,7 @@ public class HomeFragment extends Fragment implements HomeContact.View, View.OnC
     private List<Integer> images;
     private TextView mScanView;
     private TextView mSearchView;
+    private TextView mHomeOrder;
 
     public static HomeFragment getInstance() {
         if (sInstance == null) {
@@ -64,6 +68,7 @@ public class HomeFragment extends Fragment implements HomeContact.View, View.OnC
         mBanner = (Banner)mView.findViewById(R.id.home_banner_view);
         mScanView = (TextView)mView.findViewById(R.id.home_scan_view);
         mSearchView = (TextView)mView.findViewById(R.id.home_search_textview);
+        mHomeOrder =(TextView)mView.findViewById(R.id.home_order);
     }
 
     @Override
@@ -77,6 +82,7 @@ public class HomeFragment extends Fragment implements HomeContact.View, View.OnC
     public void initListener() {
         mScanView.setOnClickListener(this);
         mSearchView.setOnClickListener(this);
+        mHomeOrder.setOnClickListener(this);
     }
 
     @Override
@@ -98,6 +104,16 @@ public class HomeFragment extends Fragment implements HomeContact.View, View.OnC
             case R.id.home_search_textview:
                 CommonUtil.startActivity(getActivity(), SearchActivity.class);
                 break;
+            case R.id.home_order:
+                enterOrder();
+                break;
+        }
+    }
+    private void enterOrder() {
+        if(GSApplication.getsUserinfo()!=null){
+            CommonUtil.startActivity(getActivity(),OrderActivity.class);
+        }else {
+            Toast.makeText(getActivity(), "用户未登录", Toast.LENGTH_SHORT).show();
         }
     }
 }

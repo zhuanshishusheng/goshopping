@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -49,6 +50,7 @@ public class GoodsActivity extends BaseActivity implements View.OnClickListener,
     };
     private Gson gson;
     private ImageView mReturn;
+    private TextView mGoodText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +77,15 @@ public class GoodsActivity extends BaseActivity implements View.OnClickListener,
 
         Intent intent=getIntent();
         Bundle bundle=intent.getExtras();
-        okhttpManager.getString(RequestUtil.REQUEST_HEAD + "/good?type=" + bundle.getString("name"), new OKHttpManager.HttpCallBack() {
+
+        String type=bundle.getString("type");
+        String request=null;
+        if("search".equals(type)){
+            request=RequestUtil.REQUEST_SEARCH+bundle.getString("name");
+        }else if("sort".equals(type)){
+            request=RequestUtil.REQUEST_HEAD + "/good?type=" + bundle.getString("name");
+        }
+        okhttpManager.getString(request, new OKHttpManager.HttpCallBack() {
             @Override
             public void onError(Exception e) {
                 sendErrorMessage();
@@ -89,7 +99,7 @@ public class GoodsActivity extends BaseActivity implements View.OnClickListener,
 
             }
         });
-
+        mGoodText.setText(bundle.getString("text"));
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,  StaggeredGridLayoutManager.VERTICAL));
 
@@ -109,6 +119,7 @@ public class GoodsActivity extends BaseActivity implements View.OnClickListener,
     private void initView() {
         recyclerView = (RecyclerView) findViewById(R.id.goods_recylerview);
         mReturn = (ImageView)findViewById(R.id.sort_goods_return);
+        mGoodText =(TextView)findViewById(R.id.sort_good_text);
     }
 
     @Override

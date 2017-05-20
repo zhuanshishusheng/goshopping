@@ -132,12 +132,14 @@
                     android:textSize="12dp" />
 
                 <View
+
                     android:layout_width="1dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/mainBackGround" />
 
                 <TextView
+                    android:id="@+id/me_message"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -165,6 +167,7 @@
                 android:layout_marginLeft="50dp" />
 
             <app.m15.cn.goshopping.view.MeSelectView
+                android:id="@+id/me_select_address"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@drawable/sort_select_bg_color"

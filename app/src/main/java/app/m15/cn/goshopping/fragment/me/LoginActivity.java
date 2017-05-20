@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -17,6 +19,7 @@ import app.m15.cn.goshopping.base.GSApplication;
 import app.m15.cn.goshopping.bean.LoginBean;
 import app.m15.cn.goshopping.net.OKHttpManager;
 import app.m15.cn.goshopping.net.RequestUtil;
+import app.m15.cn.goshopping.util.CommonUtil;
 
 /**
  * Created by Administrator on 2017/5/12 0012.
@@ -52,6 +55,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         }
     };
     private Gson gson;
+    private ImageView mReturn;
+    private TextView mRegister;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -68,6 +73,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     private void initListener() {
         mLogin.setOnClickListener(this);
+        mReturn.setOnClickListener(this);
+        mRegister.setOnClickListener(this);
     }
 
     private void initData() {
@@ -80,6 +87,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         mUsername =(EditText)findViewById(R.id.login_username_et);
         mPassword =(EditText)findViewById(R.id.login_password_et);
         mLogin =(Button)findViewById(R.id.login_login);
+        mReturn =(ImageView)findViewById(R.id.login_return);
+        mRegister =(TextView)findViewById(R.id.login_register);
 
     }
 
@@ -88,6 +97,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         switch (view.getId()){
             case R.id.login_login:
                 login();
+                break;
+            case R.id.login_return:
+                finish();
+                break;
+            case R.id.login_register:
+                CommonUtil.startActivity(LoginActivity.this,RegisterActivity.class);
                 break;
         }
     }

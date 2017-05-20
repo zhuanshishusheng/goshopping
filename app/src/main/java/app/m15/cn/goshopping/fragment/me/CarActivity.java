@@ -65,6 +65,7 @@ public class CarActivity extends BaseActivity implements View.OnClickListener {
     private CarListAdapter adapter;
     private TextView mAllPrice;
     private Button mCarBalance;
+    private ImageView mReturn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -89,6 +90,7 @@ public class CarActivity extends BaseActivity implements View.OnClickListener {
         mCarList =(ListView)findViewById(R.id.me_car_list);
         mAllPrice =(TextView)findViewById(R.id.me_car_allprice);
         mCarBalance =(Button)findViewById(R.id.me_car_balance);
+        mReturn =(ImageView)findViewById(R.id.me_car_return);
 
     }
     private void initListener() {
@@ -136,6 +138,9 @@ public class CarActivity extends BaseActivity implements View.OnClickListener {
                 }else{
                     balanceGoods();
                 }
+                break;
+            case R.id.me_car_return:
+                finish();
                 break;
         }
     }

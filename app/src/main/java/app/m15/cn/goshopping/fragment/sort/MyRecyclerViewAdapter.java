@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
@@ -43,6 +44,10 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         Glide.with(context).load(RequestUtil.REQUEST_HEAD+list.get(position).getImageUrl1())
                 .placeholder(R.mipmap.sort_goods_error)
                 .into(holder.imageView);
+
+        holder.mPrice.setText("￥"+list.get(position).getMarketPrice()+".00");
+        holder.mlove.setText(list.get(position).getLove()+"");
+
     }
     @Override
     public int getItemCount() {
@@ -58,10 +63,13 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     class OneViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageView;
-
+        private TextView mPrice;
+        private TextView mlove;
         public OneViewHolder(View itemView) {
             super(itemView);
             imageView=(ImageView)itemView.findViewById(R.id.ivImage);
+            mPrice=(TextView)itemView.findViewById(R.id.recyclerview_price);
+            mlove=(TextView)itemView.findViewById(R.id.recyclerview_love);
         }
     }
     public void setOnItemClickListener(OnItemClickListener listener){

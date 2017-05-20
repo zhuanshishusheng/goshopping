@@ -22,7 +22,17 @@ public class GlideImageLoader extends ImageLoader {
          * Glide:Google推荐的图片加载库，专注于流畅的滚动
          */
         //Glide加载图片简单用法
+
+//        if(GSApplication.getsUserinfo()!=null){
+//            Glide.with(context).load(RequestUtil.REQUEST_HEAD+ GSApplication.getsUserinfo().getImageUrl())
+//                    .placeholder(R.mipmap.me_no_login)
+//                    .error(R.mipmap.me_no_login)
+//                    .into(imageView);
+//
+//            return;
+//        }
         Glide.with(context).load(path).into(imageView);
+
 //
 //        //Picasso 加载图片简单用法
 //        Picasso.with(context).load(path).into(imageView);

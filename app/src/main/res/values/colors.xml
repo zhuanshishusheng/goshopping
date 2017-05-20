@@ -11,4 +11,6 @@
     <color name="meGray">#F5F5F5</color>
     <color name="scanResultBlack">#272727</color>
     <color name="grayLine">#e6e6e6</color>
+    
+    <color name="DeepSkyBlue">#00BFFF</color>
 </resources>

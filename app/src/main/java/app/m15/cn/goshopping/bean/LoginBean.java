@@ -66,6 +66,16 @@ public class LoginBean {
         private String username;
         private int area;
 
+        public String getImageUrl() {
+            return imageUrl;
+        }
+
+        public void setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
+        }
+
+        private String imageUrl;
+
         public void setArea(int area){
             this.area=area;
         }

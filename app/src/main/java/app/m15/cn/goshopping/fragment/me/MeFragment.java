@@ -9,8 +9,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
 import app.m15.cn.goshopping.R;
 import app.m15.cn.goshopping.base.GSApplication;
+import app.m15.cn.goshopping.net.RequestUtil;
 import app.m15.cn.goshopping.util.CommonUtil;
 import app.m15.cn.goshopping.view.CustomImageView;
 import app.m15.cn.goshopping.view.MeSelectView;
@@ -29,6 +32,8 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
     private TextView mLoginUsername;
     private TextView mUserCar;
     private TextView mOrder;
+    private TextView mMessage;
+    private MeSelectView mAddress;
 
     public static MeFragment getInstance() {
         if (sInstance == null) {
@@ -65,6 +70,8 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
         mLoginUsername = (TextView)mView.findViewById(R.id.me_user_username);
         mUserCar =(TextView)mView.findViewById(R.id.me_user_car);
         mOrder =(TextView)mView.findViewById(R.id.me_order);
+        mMessage =(TextView)mView.findViewById(R.id.me_message);
+        mAddress =(MeSelectView)mView.findViewById(R.id.me_select_address);
     }
 
     @Override
@@ -79,6 +86,8 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
         mLogin.setOnClickListener(this);
         mUserCar.setOnClickListener(this);
         mOrder.setOnClickListener(this);
+        mMessage.setOnClickListener(this);
+        mAddress.setOnClickListener(this);
     }
 
     @Override
@@ -99,6 +108,28 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
             case R.id.me_order:
                 enterOrder();
                 break;
+            case R.id.me_message:
+                enterMessage();
+                break;
+            case R.id.me_select_address:
+                enterAddress();
+                break;
+        }
+    }
+
+    private void enterAddress() {
+//        if(GSApplication.getsUserinfo()!=null){
+            CommonUtil.startActivity(getActivity(),AddressActivity.class);
+//        }else {
+//            Toast.makeText(getActivity(), "用户未登录", Toast.LENGTH_SHORT).show();
+//        }
+    }
+
+    private void enterMessage() {
+        if(GSApplication.getsUserinfo()!=null){
+            CommonUtil.startActivity(getActivity(),MessageActivity.class);
+        }else {
+            Toast.makeText(getActivity(), "用户未登录", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -127,6 +158,11 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
     private void showUserinfo() {
         if(GSApplication.getsUserinfo()!=null){
             mLoginUsername.setText("用户:"+GSApplication.getsUserinfo().getUsername());
+            //网络加载图片
+            Glide.with(getActivity()).load(RequestUtil.REQUEST_HEAD+GSApplication.getsUserinfo().getImageUrl())
+                    .placeholder(R.mipmap.me_no_login)
+                    .into(mLogin);
+            //Log.i("ceshi",RequestUtil.REQUEST_HEAD+GSApplication.getsUserinfo().getImageUrl());
         }
     }
 }

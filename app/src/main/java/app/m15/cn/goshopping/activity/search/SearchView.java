@@ -179,11 +179,11 @@ public class SearchView extends LinearLayout {
                 if (!hasData) {
                     insertData(et_search.getText().toString().trim());
 
-                    //搜索后显示数据库里所有搜索历史是为了测试
                     queryData("");
+                }else if(onSearchListener!=null){
+                    onSearchListener.onSearchClick(et_search.getText().toString().trim());
                 }
-                //根据输入的内容模糊查询商品，并跳转到另一个界面，这个根据需求实现
-                Toast.makeText(context, "clicked!", Toast.LENGTH_SHORT).show();
+
             }
         });
        iv_reurn.setOnClickListener(new OnClickListener() {
@@ -236,6 +236,7 @@ public class SearchView extends LinearLayout {
         adapter.notifyDataSetChanged();
     }
 
+
     /*检查数据库中是否已经有该条记录*/
     private boolean hasData(String tempName) {
         //从Record这个表里找到name=tempName的id
@@ -254,5 +255,15 @@ public class SearchView extends LinearLayout {
 
     private void destroyActivity(Activity activity){
          activity.finish();
+    }
+    public SearchClick onSearchListener;
+    public void setOnSearchListener(SearchClick onSearchListener){
+        if(this.onSearchListener==null){
+            this.onSearchListener=onSearchListener;
+        }
+    }
+
+    public static interface SearchClick{
+        void onSearchClick(String string);
     }
 }

@@ -217,6 +217,8 @@ public class SortFragment extends Fragment implements SortContact.View, View.OnC
          intent.setClass(getActivity(),GoodsActivity.class);
         Bundle bundle=new Bundle();
         bundle.putString("name",mSortList.get(i).getName());
+        bundle.putString("type","sort");
+        bundle.putString("text",mSortList.get(i).getName());
         intent.putExtras(bundle);
         startActivity(intent);
     }
