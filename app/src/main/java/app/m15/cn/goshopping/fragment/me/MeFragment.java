@@ -118,11 +118,11 @@ public class MeFragment extends Fragment implements MeContact.View, View.OnClick
     }
 
     private void enterAddress() {
-//        if(GSApplication.getsUserinfo()!=null){
+        if(GSApplication.getsUserinfo()!=null){
             CommonUtil.startActivity(getActivity(),AddressActivity.class);
-//        }else {
-//            Toast.makeText(getActivity(), "用户未登录", Toast.LENGTH_SHORT).show();
-//        }
+        }else {
+            Toast.makeText(getActivity(), "用户未登录", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void enterMessage() {

@@ -138,6 +138,5 @@ public class GoodsActivity extends BaseActivity implements View.OnClickListener,
         bundle.putSerializable("good",mGoodList.get(position));
         intent.putExtras(bundle);
         startActivity(intent);
-
     }
 }

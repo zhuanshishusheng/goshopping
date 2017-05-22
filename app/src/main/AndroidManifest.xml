@@ -36,6 +36,8 @@
         <activity android:name=".fragment.me.RegisterActivity"/>
         <activity android:name=".fragment.me.MessageActivity"/>
         <activity android:name=".fragment.me.AddressActivity"/>
+        <activity android:name=".fragment.me.AddAddressActivity"/>
+        <activity android:name=".fragment.me.UpdateAddressActivity"/>
     </application>
 
 </manifest>
